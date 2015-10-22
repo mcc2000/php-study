@@ -10,7 +10,7 @@ function get_email_url($email) {
       return $http . 'vip.163.com';
   } else if ($t == '126.com') {
       return $http . 'mail.126.com';
-  } else if ($t == 'qq.com'||$t=='vip.qq.com'||$t=='foxmail.com'){
+  } else if ($t == 'qq.com' || $t == 'vip.qq.com' || $t == 'foxmail.com') {
       return $http . 'mail.qq.com';
   } else if ($t == 'gmail.com') {
       return $http . 'mail.google.com';
@@ -20,11 +20,11 @@ function get_email_url($email) {
       return $http . 'mail.tom.com';
   } else if ($t == 'vip.sina.com') {
       return $http . 'vip.sina.com';
-  } else if ($t == 'sina.com.cn'||$t=='sina.com') {
+  } else if ($t == 'sina.com.cn' || $t == 'sina.com') {
       return $http . 'mail.sina.com.cn';
   } else if ($t == 'tom.com') {
       return $http . 'mail.tom.com';
-  } else if ($t == 'yahoo.com.cn'||$t=='yahoo.cn') {
+  } else if ($t == 'yahoo.com.cn' || $t == 'yahoo.cn') {
       return $http . 'mail.cn.yahoo.com';
   } else if ($t == 'tom.com') {
       return $http . 'mail.tom.com';
