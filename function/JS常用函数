@@ -1,0 +1,7 @@
+###字节长度
+```
+function bytelen(str) {
+  return str.replace(/[^x00-xFF]/g,'**').length;
+}
+  
+  
