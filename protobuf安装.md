@@ -53,3 +53,31 @@ message AddressBook {
 2.protoc-gen-php.bat -i . tutorial.proto 
 注意：如果不进入protoc.exe所在的根目录，编译运行所错找不到文件 
 ```
+
+###安装composer
+###下载Protobuf-PHP（https://github.com/drslump/Protobuf-PHP）
+1.下载包放在程序里面
+2.composer install 安装
+
+###参考调用
+```
+<?php
+require_once 'DrSlump/Protobuf.php';
+\DrSlump\Protobuf::autoload();
+
+$person = new Tutorial\Person();
+$person->name = 'DrSlump';
+$person->setId(12);
+
+$book = new Tutorial\AddressBook();
+$book->addPerson($person);
+
+// Use default codec
+$data = $book->serialize();
+
+// Use custom codec
+$codec = new \DrSlump\Protobuf\Codec\Binary();
+$data = $codec->encode($book);
+// ... or ...
+$data = $book->serialize($codec);
+```
