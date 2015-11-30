@@ -81,3 +81,16 @@ $data = $codec->encode($book);
 // ... or ...
 $data = $book->serialize($codec);
 ```
+
+###其他错误(https://github.com/drslump/Protobuf-PHP/issues/28)
+```
+A simple fix for this is to change drslump code: DrSlump/Protobuf/Codec/Binary.php, line 249, change
+$wire = $this->getWireType($type);
+to
+$wire = $this->getWireType($type, null);
+That is because the function getWireType, defined above in the same file, really takes 2 arguments:
+protected function getWireType($type, $default)
+Some other uses of getWireType pass $default equal to null, so it seems correct. It seems 2nd argument is used only by assertWireType.
+
+Disclaimer: I just changed it blindly and it seems to work for me. No guarantees :)
+```
