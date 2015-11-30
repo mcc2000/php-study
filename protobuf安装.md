@@ -35,16 +35,21 @@ message AddressBook {
 ```
 
 ###pear安装
+```
 1.进入php目录 
 2.php go-pear.php 一路回车 
+```
 
 ###drslump/Protobuf-PHP安装（https://github.com/drslump/Protobuf-PHP）
+```
 1.pear channel-discover pear.pollinimini.net 
 2.pear install drslump/Protobuf-beta 
 3.安装完成后，在php根目录下出现pear/DrSlump目录，protoc-gen-php，protoc-gen-php.bat文件 
+```
 
 ###生成tutorial类
+```
 1.打开cmd,进入D盘protoc目录下 
 2.protoc-gen-php.bat -i . tutorial.proto 
 注意：如果不进入protoc.exe所在的根目录，编译运行所错找不到文件 
-
+```
