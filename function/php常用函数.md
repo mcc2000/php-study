@@ -51,3 +51,33 @@ function get_email_url($email) {
   }
 }
 ```
+
+###计算字符长度
+```
+function mbstrlen($str)
+{
+    $len = strlen($str);
+     
+    if ($len <= 0)
+    {
+        return 0;
+    }
+     
+    $count  = 0;
+     
+    for ($i = 0; $i < $len; $i++)
+    {
+        $count++;
+        if (ord($str{$i}) >= 0x80)
+        {
+            $i += 2;
+        }
+    }
+     
+    return $count;
+}
+//GBK会将2个字节当成一个字符来处理，UTF8则需要3个字节
+mbstrlen("中国so强大！")       //7
+mb_strlen("中国so强大！")      //17
+strlen("中国so强大！")         //17
+```
