@@ -1,5 +1,8 @@
 #windows 环境下配置
 
+###注意：pb4php这个解析是绿色安装，可惜不支持protobuf 3
+https://code.google.com/p/pb4php/downloads/list
+
 ###php 5.3以上
 
 ###protoc安装
