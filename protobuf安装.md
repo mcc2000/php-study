@@ -39,8 +39,9 @@ message AddressBook {
 
 ###pear安装
 ```
-1.进入php目录 
-2.php go-pear.php 一路回车 
+1.下载go-pear.phar  http://pear.php.net/go-pear.phar
+2.coky至php目录 
+3.php go-pear.php 一路回车 
 ```
 
 ###drslump/Protobuf-PHP安装（https://github.com/drslump/Protobuf-PHP）
@@ -69,20 +70,8 @@ require_once 'DrSlump/Protobuf.php';
 \DrSlump\Protobuf::autoload();
 
 $person = new Tutorial\Person();
-$person->name = 'DrSlump';
 $person->setId(12);
-
-$book = new Tutorial\AddressBook();
-$book->addPerson($person);
-
-// Use default codec
-$data = $book->serialize();
-
-// Use custom codec
-$codec = new \DrSlump\Protobuf\Codec\Binary();
-$data = $codec->encode($book);
-// ... or ...
-$data = $book->serialize($codec);
+$data = $person->serialize();
 ```
 
 ###其他错误(https://github.com/drslump/Protobuf-PHP/issues/28)
